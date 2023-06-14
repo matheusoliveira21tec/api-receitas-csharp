@@ -61,6 +61,15 @@ namespace MeuLivroDeReceitas.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O e-mail informado já está cadastrado na base de dados..
+        /// </summary>
+        public static string EMAIL_JA_CADASTRADO {
+            get {
+                return ResourceManager.GetString("EMAIL_JA_CADASTRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O e-mail do usuário é inválido..
         /// </summary>
         public static string EMAIL_USUARIO_INVALIDO {
