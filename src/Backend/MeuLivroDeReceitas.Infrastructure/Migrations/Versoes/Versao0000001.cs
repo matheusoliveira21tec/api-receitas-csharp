@@ -2,7 +2,7 @@
 
 namespace MeuLivroDeReceitas.Infrastructure.Migrations.Versoes;
 
-[Migration((long)NumeroVersoes.CriaTabelaUsuario,"Cria tabela usuario")]
+[Migration((long)NumeroVersoes.CriaTabelaUsuario,"Cria tabela usuarios")]
 
 public class Versao0000001 : Migration
 {
@@ -12,7 +12,7 @@ public class Versao0000001 : Migration
 
     public override void Up()
     {
-        var tabela =  VersaoBase.InserirColunasPadrao(Create.Table("Usuario"));
+        var tabela =  VersaoBase.InserirColunasPadrao(Create.Table("Usuarios"));
         tabela
             .WithColumn("Nome").AsString(100).NotNullable()
             .WithColumn("Email").AsString(100).NotNullable()
