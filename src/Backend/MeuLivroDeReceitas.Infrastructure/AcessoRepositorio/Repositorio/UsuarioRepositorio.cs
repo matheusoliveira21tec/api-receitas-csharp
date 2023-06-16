@@ -22,4 +22,10 @@ public class UsuarioRepositorio : IUsuarioWriteOnlyRepositorio, IUsuarioReadOnly
     {
        return await _contexto.Usuarios.AnyAsync(x => x.Email.Equals(email));
     }
+
+    public async Task<Usuario> Login(string email, string password)
+    {
+        return await _contexto.Usuarios.AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Email.Equals(email) && u.Senha.Equals(password));
+    }
 }
