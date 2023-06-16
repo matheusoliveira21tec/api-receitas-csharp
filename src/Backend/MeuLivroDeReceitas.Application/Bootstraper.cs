@@ -1,5 +1,6 @@
 ﻿using MeuLivroDeReceitas.Application.Services.Criptografia;
 using MeuLivroDeReceitas.Application.Services.Token;
+using MeuLivroDeReceitas.Application.UseCases.Login;
 using MeuLivroDeReceitas.Application.UseCases.Usuario.Registrar;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +13,7 @@ public static class Bootstraper
     {
         AdicionarChaveAdicionalSenha(services, configuration);
         AdicionarTokenJWT(services, configuration);
-        services.AddScoped<IRegistroUsuarioUseCase, RegistroUsuarioUseCase>();
+        AdicionarUseCases(services);
     }
 
     private static void AdicionarChaveAdicionalSenha(IServiceCollection services, IConfiguration configuration) 
@@ -27,5 +28,10 @@ public static class Bootstraper
         var sectionTempoVida = configuration.GetRequiredSection("Configuracoes:TempoVidaToken");
         var sectionChaveToken = configuration.GetRequiredSection("Configuracoes:ChaveToken");
         services.AddScoped(options => new TokenController(int.Parse(sectionTempoVida.Value), sectionChaveToken.Value));
+    }
+    private static void AdicionarUseCases(IServiceCollection services)
+    {
+        services.AddScoped<IRegistroUsuarioUseCase, RegistroUsuarioUseCase>()
+            .AddScoped<ILoginUseCase, LoginUseCase>();
     }
 }
