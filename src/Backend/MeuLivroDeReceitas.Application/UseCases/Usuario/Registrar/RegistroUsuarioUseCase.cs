@@ -4,6 +4,7 @@ using MeuLivroDeReceitas.Application.Services.Token;
 using MeuLivroDeReceitas.Comunicacao.Request;
 using MeuLivroDeReceitas.Comunicacao.Response;
 using MeuLivroDeReceitas.Domain.Repositorios;
+using MeuLivroDeReceitas.Domain.Repositorios.Usuario;
 using MeuLivroDeReceitas.Exception;
 using MeuLivroDeReceitas.Exception.ExceptionBase;
 
