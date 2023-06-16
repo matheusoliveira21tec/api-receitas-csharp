@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using MeuLivroDeReceitas.Comunicacao.Request;
 
-namespace Utilitario.Tests;
+namespace Utilitario.Tests.Request;
 
 public class RequestRegistrarUsuarioJsonBuilder
 {

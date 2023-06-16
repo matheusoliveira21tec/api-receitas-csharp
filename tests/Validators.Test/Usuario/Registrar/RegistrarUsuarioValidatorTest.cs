@@ -2,7 +2,7 @@
 using MeuLivroDeReceitas.Application.UseCases.Usuario.Registrar;
 using MeuLivroDeReceitas.Comunicacao.Request;
 using MeuLivroDeReceitas.Exception;
-using Utilitario.Tests;
+using Utilitario.Tests.Request;
 using Xunit;
 
 namespace Validators.Test.Usuario.Registrar;
