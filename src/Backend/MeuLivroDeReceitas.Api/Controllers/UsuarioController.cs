@@ -7,11 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MeuLivroDeReceitas.Api.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-public class UsuarioController : ControllerBase
+public class UsuarioController : MeuLivroDeReceitasController
 {
-
     [HttpPost]
     [ProducesResponseType(typeof(ResponseUsuarioRegistradoJson), StatusCodes.Status201Created)]
     public async Task<IActionResult> RegistrarUsuario(
