@@ -26,15 +26,10 @@ public class FiltroDasExceptions : IExceptionFilter
         {
             TratarErrosDeValidacaoException(context);
         }
-        else
+        else if(context.Exception is LoginInvalidoException)
         {
-            TratarOutrasException(context);
+            TratarLoginException(context);  
         }
-    }
-
-    private void TratarOutrasException(ExceptionContext context)
-    {
-        throw new NotImplementedException();
     }
 
     private void TratarErrosDeValidacaoException(ExceptionContext context)
@@ -50,4 +45,12 @@ public class FiltroDasExceptions : IExceptionFilter
         context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
         context.Result = new ObjectResult(new ResponseErrorJson(ResourceErrorMessage.ERRO_DESCONHECIDO));
     }
+
+    private static void TratarLoginException(ExceptionContext context)
+    {
+        var erroLogin = context.Exception as LoginInvalidoException;
+        context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+        context.Result = new ObjectResult(new ResponseErrorJson(erroLogin.Message));
+    }
+
 }
