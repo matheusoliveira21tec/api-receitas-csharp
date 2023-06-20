@@ -115,6 +115,15 @@ namespace MeuLivroDeReceitas.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Senha atual é inválida..
+        /// </summary>
+        public static string SENHA_ATUAL_INVALIDA {
+            get {
+                return ResourceManager.GetString("SENHA_ATUAL_INVALIDA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a A senha do usuário deve conter no mínimo 6 caracteres..
         /// </summary>
         public static string SENHA_USUARIO_MININO_6_CARACTERES {
@@ -147,6 +156,24 @@ namespace MeuLivroDeReceitas.Exception {
         public static string TELEFONE_USUARIO_VAZIO {
             get {
                 return ResourceManager.GetString("TELEFONE_USUARIO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Faça login novamente no app..
+        /// </summary>
+        public static string TOKEN_EXPIRADO {
+            get {
+                return ResourceManager.GetString("TOKEN_EXPIRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Você não tem permissão para acessar este recurso..
+        /// </summary>
+        public static string USUARIO_SEM_PERMISSAO {
+            get {
+                return ResourceManager.GetString("USUARIO_SEM_PERMISSAO", resourceCulture);
             }
         }
     }
