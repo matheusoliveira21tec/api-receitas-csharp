@@ -43,7 +43,8 @@ public static class Bootstrapper
     private static void AddRepositorios(IServiceCollection services)
     {
         services.AddScoped<IUsuarioReadOnlyRepositorio, UsuarioRepositorio>()
-            .AddScoped<IUsuarioWriteOnlyRepositorio, UsuarioRepositorio>();
+            .AddScoped<IUsuarioWriteOnlyRepositorio, UsuarioRepositorio>()
+            .AddScoped<IUsuarioUpdateOnlyRepositorio, UsuarioRepositorio>();
     }
 
     private static void AddFluentMigrator(IServiceCollection services, IConfiguration configurationManager)

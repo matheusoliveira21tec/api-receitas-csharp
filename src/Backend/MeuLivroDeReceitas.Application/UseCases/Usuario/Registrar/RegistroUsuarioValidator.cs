@@ -12,14 +12,10 @@ public class RegistroUsuarioValidator : AbstractValidator<RequestRegistrarUsuari
         RuleFor(u => u.Nome).NotEmpty().WithMessage(ResourceErrorMessage.NOME_USUARIO_VAZIO);
         RuleFor(u => u.Email).NotEmpty().WithMessage(ResourceErrorMessage.EMAIL_USUARIO_VAZIO);
         RuleFor(u => u.Telefone).NotEmpty().WithMessage(ResourceErrorMessage.TELEFONE_USUARIO_VAZIO);
-        RuleFor(u => u.Senha).NotEmpty().WithMessage(ResourceErrorMessage.SENHA_USUARIO_VAZIO);
+        RuleFor(c => c.Senha).SetValidator(new SenhaValidator());
         When(u => !string.IsNullOrWhiteSpace(u.Email), () =>
         {
             RuleFor(u => u.Email).EmailAddress().WithMessage(ResourceErrorMessage.EMAIL_USUARIO_INVALIDO);
-        });
-        When(u => !string.IsNullOrWhiteSpace(u.Senha), () =>
-        {
-            RuleFor(u => u.Senha.Length).GreaterThanOrEqualTo(6).WithMessage(ResourceErrorMessage.SENHA_USUARIO_MININO_6_CARACTERES);
         });
         When(u => !string.IsNullOrWhiteSpace(u.Telefone), () =>
         {
