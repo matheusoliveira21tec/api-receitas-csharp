@@ -61,6 +61,15 @@ namespace MeuLivroDeReceitas.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A categoria da receita é inválida..
+        /// </summary>
+        public static string CATEGORIA_RECEITA_INVALIDA {
+            get {
+                return ResourceManager.GetString("CATEGORIA_RECEITA_INVALIDA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O e-mail informado já está cadastrado na base de dados..
         /// </summary>
         public static string EMAIL_JA_CADASTRADO {
@@ -106,11 +115,56 @@ namespace MeuLivroDeReceitas.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O modo de preparo da receita deve ser informado..
+        /// </summary>
+        public static string MODOPREPARO_RECEITA_VAZIO {
+            get {
+                return ResourceManager.GetString("MODOPREPARO_RECEITA_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O nome do usuário deve ser informado..
         /// </summary>
         public static string NOME_USUARIO_VAZIO {
             get {
                 return ResourceManager.GetString("NOME_USUARIO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O produto do ingrediente deve ser informado..
+        /// </summary>
+        public static string RECEITA_INGREDIENTE_PRODUTO_VAZIO {
+            get {
+                return ResourceManager.GetString("RECEITA_INGREDIENTE_PRODUTO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A quantidade do ingrediente deve ser informada..
+        /// </summary>
+        public static string RECEITA_INGREDIENTE_QUANTIDADE_VAZIO {
+            get {
+                return ResourceManager.GetString("RECEITA_INGREDIENTE_QUANTIDADE_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Exitem ingredientes repetidos na sua lista..
+        /// </summary>
+        public static string RECEITA_INGREDIENTES_REPETIDOS {
+            get {
+                return ResourceManager.GetString("RECEITA_INGREDIENTES_REPETIDOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A receita deve ter no mínimo um ingrediente..
+        /// </summary>
+        public static string RECEITA_MINIMO_UM_INGREDIENTE {
+            get {
+                return ResourceManager.GetString("RECEITA_MINIMO_UM_INGREDIENTE", resourceCulture);
             }
         }
         
@@ -156,6 +210,24 @@ namespace MeuLivroDeReceitas.Exception {
         public static string TELEFONE_USUARIO_VAZIO {
             get {
                 return ResourceManager.GetString("TELEFONE_USUARIO_VAZIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O tempo de preparo é invalido..
+        /// </summary>
+        public static string TEMPO_PREPARO_INVALIDO {
+            get {
+                return ResourceManager.GetString("TEMPO_PREPARO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O título da receita deve ser informado..
+        /// </summary>
+        public static string TITULO_RECEITA_VAZIO {
+            get {
+                return ResourceManager.GetString("TITULO_RECEITA_VAZIO", resourceCulture);
             }
         }
         

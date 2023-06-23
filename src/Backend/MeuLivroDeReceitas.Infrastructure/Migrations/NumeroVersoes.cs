@@ -2,5 +2,6 @@
 
 public enum NumeroVersoes
 {
-    CriaTabelaUsuario = 1
+    CriaTabelaUsuario = 1,
+    CriarTabelaReceitas = 2
 }
