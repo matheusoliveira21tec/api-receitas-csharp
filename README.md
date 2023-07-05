@@ -8,7 +8,6 @@
     <li>
       <a href="#sobre-o-projeto">Sobre o projeto</a>
       <ul>
-        <li><a href="#build-status">Build Status</a></li>
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#features">Features</a></li>
       </ul>
@@ -20,9 +19,7 @@
         <li><a href="#instalação">Instalação</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#licença">Licença</a></li>
-    <li><a href="#agradecimentos">Agradecimentos</a></li>
+  
   </ol>
 </details>
 
