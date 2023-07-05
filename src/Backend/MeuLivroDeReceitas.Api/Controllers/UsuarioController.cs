@@ -1,5 +1,6 @@
-using MeuLivroDeReceitas.Api.Filtros;
+using MeuLivroDeReceitas.Api.Filtros.UsuarioLogado;
 using MeuLivroDeReceitas.Application.UseCases.Usuario.AlterarSenha;
+using MeuLivroDeReceitas.Application.UseCases.Usuario.RecuperarPerfil;
 using MeuLivroDeReceitas.Application.UseCases.Usuario.Registrar;
 using MeuLivroDeReceitas.Comunicacao.Request;
 using MeuLivroDeReceitas.Comunicacao.Response;
@@ -30,5 +31,16 @@ public class UsuarioController : MeuLivroDeReceitasController
         await useCase.Executar(request);
 
         return NoContent();
+    }
+
+    [HttpGet]
+    [ProducesResponseType(typeof(ResponsePerfilUsuarioJson), StatusCodes.Status200OK)]
+    [ServiceFilter(typeof(UsuarioAutenticadoAttribute))]
+    public async Task<IActionResult> RecuperarPerfil(
+           [FromServices] IRecuperarPerfilUseCase useCase)
+    {
+        var resultado = await useCase.Executar();
+
+        return Ok(resultado);
     }
 }

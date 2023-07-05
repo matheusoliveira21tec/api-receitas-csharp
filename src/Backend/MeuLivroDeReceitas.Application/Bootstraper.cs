@@ -2,11 +2,20 @@
 using MeuLivroDeReceitas.Application.Services.Token;
 using MeuLivroDeReceitas.Application.Services.UsuarioLogado;
 using MeuLivroDeReceitas.Application.Servicos.UsuarioLogado;
+using MeuLivroDeReceitas.Application.UseCases.Conexao.AceitarConexao;
+using MeuLivroDeReceitas.Application.UseCases.Conexao.GerarQRCode;
+using MeuLivroDeReceitas.Application.UseCases.Conexao.QRCodeLido;
+using MeuLivroDeReceitas.Application.UseCases.Conexao.Recuperar;
+using MeuLivroDeReceitas.Application.UseCases.Conexao.RecusarConexao;
+using MeuLivroDeReceitas.Application.UseCases.Conexao.Remover;
 using MeuLivroDeReceitas.Application.UseCases.Dashboard;
 using MeuLivroDeReceitas.Application.UseCases.Login;
+using MeuLivroDeReceitas.Application.UseCases.Receita.Atualizar;
+using MeuLivroDeReceitas.Application.UseCases.Receita.Deletar;
 using MeuLivroDeReceitas.Application.UseCases.Receita.RecuperarPorId;
 using MeuLivroDeReceitas.Application.UseCases.Receita.Registrar;
 using MeuLivroDeReceitas.Application.UseCases.Usuario.AlterarSenha;
+using MeuLivroDeReceitas.Application.UseCases.Usuario.RecuperarPerfil;
 using MeuLivroDeReceitas.Application.UseCases.Usuario.Registrar;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -59,6 +68,15 @@ public static class Bootstraper
             .AddScoped<IAlterarSenhaUseCase, AlterarSenhaUseCase>()
             .AddScoped<IRegistrarReceitaUseCase, RegistrarReceitaUseCase>()
             .AddScoped<IDashboardUseCase, DashboardUseCase>()
-            .AddScoped<IRecuperarReceitaPorIdUseCase, RecuperarReceitaPorIdUseCase>();
+            .AddScoped<IRecuperarReceitaPorIdUseCase, RecuperarReceitaPorIdUseCase>()
+            .AddScoped<IAtualizarReceitaUseCase, AtualizarReceitaUseCase>()
+            .AddScoped<IDeletarReceitaUseCase, DeletarReceitaUseCase>()
+            .AddScoped<IRecuperarPerfilUseCase, RecuperarPerfilUseCase>()
+            .AddScoped<IGerarQRCodeUseCase, GerarQRCodeUseCase>()
+            .AddScoped<IQRCodeLidoUseCase, QRCodeLidoUseCase>()
+            .AddScoped<IRecusarConexaoUseCase, RecusarConexaoUseCase>()
+            .AddScoped<IAceitarConexaoUseCase, AceitarConexaoUseCase>()
+            .AddScoped<IRecuperarTodasConexoesUseCase, RecuperarTodasConexoesUseCase>()
+            .AddScoped<IRemoverConexaoUseCase, RemoverConexaoUseCase>();
     }
 }

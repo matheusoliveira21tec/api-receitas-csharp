@@ -21,7 +21,7 @@ public class ReceitaValidator : AbstractValidator<RequestReceitaJson>
 
         RuleFor(x => x.Ingredientes).Custom((ingredientes, contexto) =>
         {
-            var produtosDistintos = ingredientes.Select(c => c.Produto.ToLower()).Distinct();
+            var produtosDistintos = ingredientes.Select(c => c.Produto.RemoverAcentos().ToLower()).Distinct();
             if (produtosDistintos.Count() != ingredientes.Count)
             {
                 contexto.AddFailure(new FluentValidation.Results.ValidationFailure("Ingredientes", ResourceErrorMessage.RECEITA_INGREDIENTES_REPETIDOS));

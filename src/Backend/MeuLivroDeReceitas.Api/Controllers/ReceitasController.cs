@@ -1,5 +1,4 @@
 ﻿using AspNetCore.Hashids.Mvc;
-using MeuLivroDeReceitas.Api.Filtros;
 using MeuLivroDeReceitas.Api.Binder;
 using MeuLivroDeReceitas.Application.UseCases.Receita.RecuperarPorId;
 using MeuLivroDeReceitas.Application.UseCases.Receita.Registrar;
@@ -9,6 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using HashidsModelBinder = MeuLivroDeReceitas.Api.Binder.HashidsModelBinder;
+using MeuLivroDeReceitas.Application.UseCases.Receita.Atualizar;
+using MeuLivroDeReceitas.Application.UseCases.Receita.Deletar;
+using MeuLivroDeReceitas.Api.Filtros.UsuarioLogado;
 
 namespace MeuLivroDeReceitas.Api.Controllers;
 
@@ -38,5 +40,29 @@ public class ReceitasController : MeuLivroDeReceitasController
         return Ok(resposta);
     }
 
+    [HttpPut]
+    [Route("{id:hashids}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<IActionResult> Atualizar(
+       [FromServices] IAtualizarReceitaUseCase useCase,
+       [FromBody] RequestReceitaJson requisicao,
+       [FromRoute][ModelBinder(typeof(HashidsModelBinder))] long id)
+    {
+        await useCase.Executar(id, requisicao);
+
+        return NoContent();
+    }
+
+    [HttpDelete]
+    [Route("{id:hashids}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<IActionResult> Deletar(
+        [FromServices] IDeletarReceitaUseCase useCase,
+        [FromRoute][ModelBinder(typeof(HashidsModelBinder))] long id)
+    {
+        await useCase.Executar(id);
+
+        return NoContent();
+    }
 
 }

@@ -70,6 +70,15 @@ namespace MeuLivroDeReceitas.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Código não encontrado..
+        /// </summary>
+        public static string CODIGO_NAO_ENCONTRADO {
+            get {
+                return ResourceManager.GetString("CODIGO_NAO_ENCONTRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O e-mail informado já está cadastrado na base de dados..
         /// </summary>
         public static string EMAIL_JA_CADASTRADO {
@@ -102,6 +111,15 @@ namespace MeuLivroDeReceitas.Exception {
         public static string ERRO_DESCONHECIDO {
             get {
                 return ResourceManager.GetString("ERRO_DESCONHECIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Essa conexão já existe..
+        /// </summary>
+        public static string ESTA_CONEXAO_JA_EXISTE {
+            get {
+                return ResourceManager.GetString("ESTA_CONEXAO_JA_EXISTE", resourceCulture);
             }
         }
         
@@ -250,11 +268,29 @@ namespace MeuLivroDeReceitas.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Usuário não encontrado..
+        /// </summary>
+        public static string USUARIO_NAO_ENCONTRADO {
+            get {
+                return ResourceManager.GetString("USUARIO_NAO_ENCONTRADO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Você não tem permissão para acessar este recurso..
         /// </summary>
         public static string USUARIO_SEM_PERMISSAO {
             get {
                 return ResourceManager.GetString("USUARIO_SEM_PERMISSAO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Você não pode executar essa operação..
+        /// </summary>
+        public static string VOCE_NAO_PODE_EXECUTAR_ESTA_OPERACAO {
+            get {
+                return ResourceManager.GetString("VOCE_NAO_PODE_EXECUTAR_ESTA_OPERACAO", resourceCulture);
             }
         }
     }
