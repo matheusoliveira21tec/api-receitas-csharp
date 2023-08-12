@@ -71,7 +71,7 @@ E outras.
 
 1. Faça o clone do repositório
    ```sh
-   git clone https://github.com/welissonArley/MeuLivroDeReceitas.git
+   git clone https://github.com/matheusoliveira21tec/api-receitas-csharp.git
    ```
 2. Preencha as informações no arquivo `appsettings.Development.json`.
 3. Execute a Web API
